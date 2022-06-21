@@ -12,3 +12,14 @@
 </div>
 
 <%= link_to "New home", new_home_path %>
+
+
+<% if trainer_signed_in? %>
+  <%=  button_to 'Sign out', destroy_trainer_session_path ,method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_trainer_session_path, class: 'link' %>
+
+  <%= link_to 'Sign Up', new_trainer_registration_path, class: 'link' %>
+<% end %>
+<div>
+</div>
